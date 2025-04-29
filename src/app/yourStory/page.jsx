@@ -14,7 +14,7 @@ export default function yourStory() {
   const [story, setStory] = useState("");
 
   useEffect(() => {
-    fetch("API/CustomStory")
+    fetch("/API/CustomStory")
     .then(response => response.json())
     .then(data => setStory(data.firstStory));
   })
