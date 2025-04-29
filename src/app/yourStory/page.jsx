@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function yourStory() {
   // const response = await fetch("http://localhost:3000/API/CustomStory", {
