@@ -1,13 +1,23 @@
+"use client"
+
 import Link from "next/link";
 
-export default async function yourStory() {
-  const response = await fetch("http://localhost:3000/API/CustomStory", {
-    method: "GET",
-    headers: { "content-type": "application/json" },
-  });
+export default function yourStory() {
+  // const response = await fetch("http://localhost:3000/API/CustomStory", {
+  //   method: "GET",
+  //   headers: { "content-type": "application/json" },
+  // });
 
-  const data = await response.json();
-  const story = data.firstStory;
+  // const data = await response.json();
+  // const story = data.firstStory;
+
+  const [story, setStory] = useState("");
+
+  useEffect(() => {
+    fetch("API/CustomStory")
+    .then(response => response.json())
+    .then(data => setStory(data.firstStory));
+  })
 
   return (
     <div className="flex flex-col text-xl ">
