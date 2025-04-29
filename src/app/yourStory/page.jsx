@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default async function yourStory() {
+export default async function YourStory() {
   const response = await fetch("http://localhost:3000/API/CustomStory", {
     method: "GET",
     headers: { "content-type": "application/json" },
